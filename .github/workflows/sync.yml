@@ -68,7 +68,8 @@ jobs:
       - name: print git logs
         run: |
           for file in ./*.log; do
-            ::group::{$file}
+            short_name=$(basename "$file")
+            ::group::{$short_name}
             cat "$file"
             ::endgroup::
           done
