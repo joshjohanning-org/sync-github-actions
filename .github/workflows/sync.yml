@@ -56,7 +56,7 @@ jobs:
             fi
           
             # mirror repo
-            git clone --mirror $clone_url
+            git clone --mirror $clone_url --config http.proxy=127.0.0.1:9000 https.proxy=127.0.0.1:9000 --config http.sslVerify=false
             cd $dir
             # ignore errors with git push
             git push --mirror $push_url || true
