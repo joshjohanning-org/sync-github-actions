@@ -26,7 +26,7 @@ jobs:
 
           # Loop through each line in the file
           while read line; do
-            echo ::group::{$line}
+            echo "::group::{$line}"
             echo "Processing line: $line"
           
             clone_url="https://github.com/$(echo $line | cut -d':' -f1).git"
@@ -65,5 +65,5 @@ jobs:
             cd ..
             rm -rf $dir
             
-            echo ::endgroup::
+            echo "::endgroup::"
           done < actions-list.txt
