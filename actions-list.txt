@@ -1,3 +1,4 @@
+synopsys-sig/detect-action:joshjohanning-org/synopsys-detect-action
 jfrog/setup-jfrog-cli:joshjohanning-org/setup-jfrog-cli
 SonarSource/sonarqube-scan-action:joshjohanning-org/sonarqube-scan-action
 azure/login:joshjohanning-org/azure-login
