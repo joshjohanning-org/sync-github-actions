@@ -16,7 +16,7 @@ jobs:
       
       - name: sync
         env:
-          # GITHUB_PAT: ${{ secrets.ADMIN_TOKEN }}
+          GITHUB_PAT: ${{ secrets.ADMIN_TOKEN }}
           GITHUB_URL: https://github.com
           GITHUB_API_URL: https://api.github.com # server is like https://myserver.github.com/api/v3
         run: |
@@ -25,7 +25,7 @@ jobs:
           echo $GITHUB_PAT
           echo $GITHUB_URL
           echo $GITHUB_API_URL
-          export GITHUB_PAT=${{ secrets.ADMIN_TOKEN }}
+
           # Loop through each line in the file
           while read line; do
             echo "Processing line: $line"
