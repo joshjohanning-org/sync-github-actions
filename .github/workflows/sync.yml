@@ -59,7 +59,7 @@ jobs:
             # mirror repo
             git clone --mirror $clone_url
             cd $dir
-            git push --mirror $push_url
+            git push --mirror $push_url || true
             cd ..
             rm -rf $dir
           done < actions-list.txt

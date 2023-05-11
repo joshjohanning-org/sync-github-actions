@@ -4,7 +4,7 @@
 
 GITHUB_URL="https://github.com"
 GITHUB_API_URL="https://api.github.com" # server is $GITHUB_URL/api/v3
-GITHUB_PAT="ghp_"
+# export GITHUB_PAT=ghp_abc
 
 # Loop through each line in the file
 while read line; do
@@ -41,7 +41,8 @@ while read line; do
   # mirror repo
   git clone --mirror $clone_url
   cd $dir
-  git push --mirror $push_url
+  # ignore errors with git push
+  git push --mirror $push_url || true
   cd ..
   rm -rf $dir
 done < actions-list.txt
