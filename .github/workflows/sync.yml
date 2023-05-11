@@ -21,7 +21,7 @@ jobs:
           GITHUB_API_URL: https://api.github.com # server is like https://myserver.github.com/api/v3
           REPO_LIST: actions-list.txt
         run: |
-          echo "Looping through $REPO_LIST"
+          echo "Looping through $REPO_LIST ..."
           # Loop through each line in the file
           while read line; do
             echo "::group::{$line}"
@@ -65,4 +65,4 @@ jobs:
             
             echo "::endgroup::"
           done < $REPO_LIST
-          echo "done"
+          echo "... done"
