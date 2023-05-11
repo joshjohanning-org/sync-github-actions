@@ -65,7 +65,7 @@ jobs:
             rm -rf $dir
           done < actions-list.txt
 
-      - name: print logs
+      - name: print git logs
         run: |
           for file in ./*.log; do
             ::group::{$file}
