@@ -39,10 +39,10 @@ while read line; do
   fi
 
   # mirror repo
-  git clone --mirror $clone_url > $target_repo.log
+  git clone --mirror $clone_url
   cd $dir
   # ignore errors with git push
-  git push --mirror $push_url >> $target_repo.log || true
+  git push --mirror $push_url || true
   cd ..
   rm -rf $dir
 done < actions-list.txt

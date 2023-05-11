@@ -20,10 +20,6 @@ jobs:
           GITHUB_URL: https://github.com
           GITHUB_API_URL: https://api.github.com # server is like https://myserver.github.com/api/v3
         run: |         
-          echo $GITHUB_PAT
-          echo $GITHUB_URL
-          echo $GITHUB_API_URL
-
           # Loop through each line in the file
           while read line; do
             echo "::group::{$line}"
@@ -58,10 +54,10 @@ jobs:
             fi
           
             # mirror repo
-            git clone --mirror $clone_url > $target_repo.log
+            git clone --mirror $clone_url
             cd $dir
             # ignore errors with git push
-            git push --mirror $push_url >> $target_repo.log || true
+            git push --mirror $push_url || true
             cd ..
             rm -rf $dir
             
