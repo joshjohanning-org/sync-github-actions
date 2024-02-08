@@ -19,5 +19,5 @@ azure/login:joshjohanning-org/azure-login
 
 ```
 
-> **Note:**
+> [!NOTE]
 > Make sure to leave a trailing space in the input file you create.
